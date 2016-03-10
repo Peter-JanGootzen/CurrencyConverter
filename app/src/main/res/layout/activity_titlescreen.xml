@@ -24,27 +24,25 @@
         android:id="@+id/titleScreenButton"
         android:onClick="titleScreenAdvance"
         android:layout_below="@+id/titleScreenImageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="by Swooky"
+        android:text="By Peter-Jan Gootzen en Bram-Boris Meerlo"
         android:id="@+id/titleScreenText"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="V1.1.1"
+        android:text="V1.5"
         android:id="@+id/versionNumber"
-        android:layout_alignBottom="@+id/titleScreenText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
