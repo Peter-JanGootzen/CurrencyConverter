@@ -1,4 +1,3 @@
 # CurrencyConverter TODO
-Add real-time exchange rate checks via some api, that gives you the rates in json. 
+Add scrolling listview so that the user can choose what currency they want to convert.
 
-(Won't happen for some time because I don't know json parsing and http calling for android yet.)
