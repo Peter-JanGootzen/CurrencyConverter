@@ -82,9 +82,9 @@
         android:layout_height="wrap_content"
         android:text="Refresh conversion rates"
         android:id="@+id/retryButton"
-        android:layout_alignParentBottom="true"
+        android:onClick="retryDownload"
+        android:layout_below="@+id/calculate"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="107dp"
-        android:onClick="retryDownload" />
+        android:layout_marginTop="62dp" />
 
 </RelativeLayout>

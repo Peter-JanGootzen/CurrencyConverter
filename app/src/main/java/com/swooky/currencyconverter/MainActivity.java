@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         backpress = (backpress + 1);
         if (backpress == 1) {
-            Toast.makeText(this, " Press Back again to Exit ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Press Back again to Exit.", Toast.LENGTH_SHORT).show();
 
         }
         if (backpress > 1) {
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     public void startDownloadIfNetworkTrue(){
 
         if (isNetworkAvailable()) {
-            Toast.makeText(MainActivity.this, "Starting to download latest conversion rates", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Starting to download latest conversion rates.", Toast.LENGTH_SHORT).show();
             DownloadTask task = new DownloadTask();
             task.execute("http://api.fixer.io/latest");
         }
@@ -156,9 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } //catch (JSONException e) {
-                //e.printStackTrace();
-            //}
+            }
 
             return null;
         }
@@ -168,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(result);
 
 
-            Toast.makeText(MainActivity.this, "Downloading has finished and been stored locally", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Downloading has finished and the conversion rates have been stored locally.", Toast.LENGTH_SHORT).show();
             actualRates();
 
 
@@ -357,10 +355,10 @@ public class MainActivity extends AppCompatActivity {
         EditText editTextDollar = (EditText) findViewById(R.id.editTextDollar);
         if (€to$status) {
             if (editTextEuro.getText().toString().equals("")) {
-                Toast.makeText(MainActivity.this, "You need to enter a number in the Euro field", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "You need to enter a number in the Euro field.", Toast.LENGTH_LONG).show();
             } else {
                 if (USDRate == 0) {
-                    Toast.makeText(MainActivity.this, "The exchange rates have not been downloaded, please wait for 10 seconds or restart the app ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "The exchange rates have not yet been downloaded, press the refresh button.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     doubleEuro = Double.valueOf(editTextEuro.getText().toString());
@@ -371,10 +369,10 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             if (editTextDollar.getText().toString().equals("")) {
-                Toast.makeText(MainActivity.this, "You need to enter a number in the Dollar field", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "You need to enter a number in the Dollar field.", Toast.LENGTH_LONG).show();
             } else {
                 if (USDRate == 0) {
-                    Toast.makeText(MainActivity.this, "The exchange rates have not been downloaded, please wait for 10 seconds or restart the app ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "The exchange rates have not yet been downloaded, press the refresh button.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     doubleDollar = Double.valueOf(editTextDollar.getText().toString());
@@ -385,7 +383,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
 
     public void switchCurrency(View view) {
         Button currencySwitch = (Button) findViewById(R.id.currencySwitch);
@@ -400,13 +397,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void retryDownload(View view) {
         if (isNetworkAvailable()) {
-            Toast.makeText(MainActivity.this, "Starting to download current conversion rates", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Starting to download current conversion rates.", Toast.LENGTH_SHORT).show();
             DownloadTask task = new DownloadTask();
             task.execute("http://api.fixer.io/latest");
         }
 
         else {
-            Toast.makeText(MainActivity.this, "You are not connected the internet,", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "You are not connected to the internet.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -415,6 +412,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences("prefs", 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("storedMainInitiated", true).commit();
+        startDownloadIfNetworkTrue();
     }
 }
 
