@@ -24,7 +24,8 @@
         android:id="@+id/titleScreenButton"
         android:onClick="titleScreenAdvance"
         android:layout_below="@+id/titleScreenImageView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp" />
 
     <TextView
         android:layout_width="wrap_content"
