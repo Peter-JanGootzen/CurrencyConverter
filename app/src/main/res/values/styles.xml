@@ -7,5 +7,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="android.support.v7.internal.app.WindowDecorActionBar" parent="Base.Theme.AppCompat.Light.DarkActionBar" />
 
 </resources>
