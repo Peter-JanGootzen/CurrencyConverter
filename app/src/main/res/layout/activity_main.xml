@@ -55,7 +55,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Currency2"
+        android:id="@+id/currencyL"
         android:layout_alignRight="@+id/editTextEuro"
         android:layout_alignEnd="@+id/editTextEuro"
         android:layout_alignParentTop="true"
@@ -69,7 +69,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Currency"
+        android:id="@+id/currencyR"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/editTextDollar"
         android:layout_alignStart="@+id/editTextDollar"
@@ -79,7 +79,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Currency2"
+        android:layout_below="@+id/currencyL"
         android:layout_alignBottom="@+id/editTextEuro"
         android:gravity="top|bottom|center_horizontal"
         android:id="@+id/vancurrency"
@@ -92,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tocurrency"
-        android:layout_below="@+id/Currency2"
+        android:layout_below="@+id/currencyL"
         android:layout_alignBottom="@+id/editTextDollar"
         android:gravity="top|bottom|center_horizontal"
         android:layout_toRightOf="@+id/currencySwitch"
@@ -109,8 +109,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignBottom="@+id/currencySwitch"
-        android:layout_alignRight="@+id/Currency2"
-        android:layout_alignEnd="@+id/Currency2"
+        android:layout_alignRight="@+id/currencyL"
+        android:layout_alignEnd="@+id/currencyL"
         android:gravity="center_vertical|center_horizontal"
         android:text="EUR" />
 
@@ -124,8 +124,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/vanCurrency"
-        android:layout_alignLeft="@+id/Currency"
-        android:layout_alignStart="@+id/Currency"
+        android:layout_alignLeft="@+id/currencyR"
+        android:layout_alignStart="@+id/currencyR"
         android:gravity="center_vertical|center_horizontal"
         android:text="USD" />
 

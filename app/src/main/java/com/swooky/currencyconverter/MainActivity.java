@@ -82,11 +82,11 @@ public class MainActivity extends AppCompatActivity {
     public double EURRate;
 
     public String activeCurrency2 = "EUR";
-    public ListView Currencies;
-    public ListView Currencies3;
-    public boolean listViewTrue = false;
+    public ListView currenciesL;
+    public ListView CurrenciesR;
+    public boolean listViewTrueR = false;
 
-    public boolean listViewTrue2 = false;
+    public boolean listViewTrueL = false;
     public TextView vanCurrency2;
     public TextView toCurrency2;
     public String activeCurrency = "USD";
@@ -175,104 +175,8 @@ public class MainActivity extends AppCompatActivity {
     public void startDownloadIfNetworkTrue() { // In deze method worden de wisselkoersen gedownload
 
         if (isNetworkAvailable()) { // Als je internet hebt
-            if (activeCurrency2 == "EUR") { // en Euro de actieve valuta is
-                DownloadTask task = new DownloadTask();
-                task.execute("http://api.fixer.io/latest"); // download dan de wisselkoersen voor euro
-            } else if (activeCurrency2 == "USD") { // en Dollar de actieve valuta is
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=USD"); // download dan de wisselkoersen voor dollar
-            } else if (activeCurrency2 == "AUD") { // enz.
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=AUD"); // enz.
-            } else if (activeCurrency2 == "BGN") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=BGN");
-            } else if (activeCurrency2 == "BRL") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=BRL");
-            } else if (activeCurrency2 == "CAD") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=CAD");
-            } else if (activeCurrency2 == "CHF") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=CHF");
-            } else if (activeCurrency2 == "CNY") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=CNY");
-            } else if (activeCurrency2 == "CZK") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=CZK");
-            } else if (activeCurrency2 == "DKK") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=DKK");
-            } else if (activeCurrency2 == "GBP") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=GBP");
-            } else if (activeCurrency2 == "HKD") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=HKD");
-            } else if (activeCurrency2 == "HRK") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=HRK");
-            } else if (activeCurrency2 == "HUF") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=HUF");
-            } else if (activeCurrency2 == "IDR") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=IDR");
-            } else if (activeCurrency2 == "ILS") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=ILS");
-            } else if (activeCurrency2 == "INR") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=INR");
-            } else if (activeCurrency2 == "JPY") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=JPY");
-            } else if (activeCurrency2 == "KRW") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=KRW");
-            } else if (activeCurrency2 == "MXN") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=MXN");
-            } else if (activeCurrency2 == "MYR") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=MYR");
-            } else if (activeCurrency2 == "NOK") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=NOK");
-            } else if (activeCurrency2 == "NZD") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=NZD");
-            } else if (activeCurrency2 == "PHP") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=PHP");
-            } else if (activeCurrency2 == "PLN") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=PLN");
-            } else if (activeCurrency2 == "RON") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=RON");
-            } else if (activeCurrency2 == "RUB") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=RUB");
-            } else if (activeCurrency2 == "SEK") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=SEK");
-            } else if (activeCurrency2 == "SGD") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=SGD");
-            } else if (activeCurrency2 == "THB") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=THB");
-            } else if (activeCurrency2 == "TRY") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=TRY");
-            } else if (activeCurrency2 == "ZAR") {
-                DownloadTask taskUSD = new DownloadTask();
-                taskUSD.execute("http://api.fixer.io/latest?base=ZAR");
-            }
-
+            DownloadTask task = new DownloadTask(); // download dan de wisselkoersen voor dollar
+            task.execute("http://api.fixer.io/latest?base=" + activeCurrency2);
 
         } else { // als je geen internet hebt
             Toast.makeText(MainActivity.this, "You are not connected the internet,", Toast.LENGTH_SHORT).show();  // komt er een pop-up dat je geen internet hebt
@@ -442,53 +346,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public String offlineRates() { // In deze method wordt het offline bestand uitgelezen en in een String gezet. Dit gebruiken we niet, omdat het te moeilijk was om te implementeren met alle verschillende valuta
-
-        String ret = "";
-
-        try {
-            InputStream inputStream = openFileInput("rates.json");
-
-            if (inputStream != null) {
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String receiveString = "";
-                StringBuilder stringBuilder = new StringBuilder();
-
-                while ((receiveString = bufferedReader.readLine()) != null) {
-                    stringBuilder.append(receiveString);
-                }
-
-                inputStream.close();
-                ret = stringBuilder.toString();
-            }
-        } catch (FileNotFoundException e) {
-            Log.e("login activity", "File not found: " + e.toString());
-            Toast.makeText(MainActivity.this, "For first time use, you need to be connected to the internet.", Toast.LENGTH_SHORT).show();
-        } catch (IOException e) {
-            Log.e("login activity", "Can not read file: " + e.toString());
-        }
-
-        return ret;
-
-    }
-
     public void viewer(View view){ // deze mehtod wordt uigevoerd als je op de active currency klik
-        if(!listViewTrue)
+        if(!listViewTrueR)
             toCurrency = (TextView)findViewById(R.id.toCurrency);
 
             toCurrency.setText("");
             toCurrency.setVisibility(View.INVISIBLE); // de tekst wordt dan weggehaald
-        listViewer(); // en de method waarin de lijst met valuta staan wordt opgeroepen
+        listViewerR(); // en de method waarin de lijst met valuta staan wordt opgeroepen
 
 
        }
     public void viewer2(View view){ // het zelfde als bij view1(View view)
-        if(!listViewTrue2) {
+        if(!listViewTrueL) {
             vanCurrency2 = (TextView)findViewById(R.id.vanCurrency);
             vanCurrency2.setText("");
             vanCurrency2.setVisibility(View.INVISIBLE);
-            listViewer2();
+            listViewerL();
 
         }
     }
@@ -922,60 +795,60 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void listViewer2() {
+    public void listViewerL() {
 
-        Currencies = (ListView) findViewById(R.id.Currency2);//Hier maakt hij een prive variabele die wordt gelinkt aan de list view in de design view.
+        currenciesL = (ListView) findViewById(R.id.currencyL);//Hier maakt hij een prive variabele die wordt gelinkt aan de list view in de design view.
 
-        final ArrayList<String> Currencies2 = new ArrayList<String>();//Er wordt een arraylist aangemaakt om alle valuta's in op te slaan.
+        final ArrayList<String> currenciesLList = new ArrayList<String>();//Er wordt een arraylist aangemaakt om alle valuta's in op te slaan.
 
-        Currencies2.add("AUD");
-        Currencies2.add("BGN");
-        Currencies2.add("BRL");
-        Currencies2.add("CAD");
-        Currencies2.add("CHF");
-        Currencies2.add("CNY");
-        Currencies2.add("CZK");
-        Currencies2.add("DKK");
-        Currencies2.add("EUR");
-        Currencies2.add("GBP");
-        Currencies2.add("HKD");
-        Currencies2.add("HRK");
-        Currencies2.add("HUF");
-        Currencies2.add("IDR");
-        Currencies2.add("ILS");
-        Currencies2.add("INR");
-        Currencies2.add("JPY");
-        Currencies2.add("KRW");
-        Currencies2.add("MXN");
-        Currencies2.add("MYR");
-        Currencies2.add("NOK");
-        Currencies2.add("NZD");
-        Currencies2.add("PHP");
-        Currencies2.add("PLN");
-        Currencies2.add("RON");
-        Currencies2.add("RUB");
-        Currencies2.add("SEK");
-        Currencies2.add("SGD");
-        Currencies2.add("THB");
-        Currencies2.add("TRY");
-        Currencies2.add("USD");
-        Currencies2.add("ZAR");
+        currenciesLList.add("AUD");
+        currenciesLList.add("BGN");
+        currenciesLList.add("BRL");
+        currenciesLList.add("CAD");
+        currenciesLList.add("CHF");
+        currenciesLList.add("CNY");
+        currenciesLList.add("CZK");
+        currenciesLList.add("DKK");
+        currenciesLList.add("EUR");
+        currenciesLList.add("GBP");
+        currenciesLList.add("HKD");
+        currenciesLList.add("HRK");
+        currenciesLList.add("HUF");
+        currenciesLList.add("IDR");
+        currenciesLList.add("ILS");
+        currenciesLList.add("INR");
+        currenciesLList.add("JPY");
+        currenciesLList.add("KRW");
+        currenciesLList.add("MXN");
+        currenciesLList.add("MYR");
+        currenciesLList.add("NOK");
+        currenciesLList.add("NZD");
+        currenciesLList.add("PHP");
+        currenciesLList.add("PLN");
+        currenciesLList.add("RON");
+        currenciesLList.add("RUB");
+        currenciesLList.add("SEK");
+        currenciesLList.add("SGD");
+        currenciesLList.add("THB");
+        currenciesLList.add("TRY");
+        currenciesLList.add("USD");
+        currenciesLList.add("ZAR");
 
-        ArrayAdapter<String> arrayDing2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Currencies2);//Deze array wordt gelinkt als een "Adapter".
-        Currencies.setAdapter(arrayDing2); // de valuta's worden in de lijst gezet
-        Currencies.setVisibility(View.VISIBLE); // de lijst word zichtbaar gemaakt
-        Currencies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ArrayAdapter<String> arrayDing2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, currenciesLList);//Deze array wordt gelinkt als een "Adapter".
+        currenciesL.setAdapter(arrayDing2); // de valuta's worden in de lijst gezet
+        currenciesL.setVisibility(View.VISIBLE); // de lijst word zichtbaar gemaakt
+        currenciesL.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) { // als de gebruiker op een valuta klikt
 
-                activeCurrency2 = Currencies2.get(position); // Zet de activecurrency2 naar de valuta waar is op geklikt
+                activeCurrency2 = currenciesLList.get(position); // Zet de activecurrency2 naar de valuta waar is op geklikt
                 startDownloadIfNetworkTrue(); // start het downloaden van de wisselkoersen
                 vanCurrency = (TextView)findViewById(R.id.vanCurrency);
                 vanCurrency.setText(activeCurrency2); // zet de active valuta tekst naar de activeCurrency
                 TextView text1 = (TextView) findViewById(R.id.vancurrency);
                 text1.setText(activeCurrency2);
-                Currencies.setVisibility(View.INVISIBLE); // maakt de lijst ontzichtbaar
-                listViewTrue2 = false;
+                currenciesL.setVisibility(View.INVISIBLE); // maakt de lijst ontzichtbaar
+                listViewTrueL = false;
                 vanCurrency.setVisibility(View.VISIBLE); // en maakt de active valuta tekst zichtbaar
 
             }
@@ -984,61 +857,61 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void listViewer() { // deze method is het zelfde als listViewer2() maar is het dan de rechter lijst
+    public void listViewerR() { // deze method is het zelfde als listViewerL() maar is het dan de rechter lijst
 
-        Currencies3 = (ListView) findViewById(R.id.Currency);
+        CurrenciesR = (ListView) findViewById(R.id.currencyR);
 
-        final ArrayList<String> Currencies2 = new ArrayList<String>();
+        final ArrayList<String> currenciesRList = new ArrayList<String>();
 
-        Currencies2.add("AUD");
-        Currencies2.add("BGN");
-        Currencies2.add("BRL");
-        Currencies2.add("CAD");
-        Currencies2.add("CHF");
-        Currencies2.add("CNY");
-        Currencies2.add("CZK");
-        Currencies2.add("DKK");
-        Currencies2.add("EUR");
-        Currencies2.add("GBP");
-        Currencies2.add("HKD");
-        Currencies2.add("HRK");
-        Currencies2.add("HUF");
-        Currencies2.add("IDR");
-        Currencies2.add("ILS");
-        Currencies2.add("INR");
-        Currencies2.add("JPY");
-        Currencies2.add("KRW");
-        Currencies2.add("MXN");
-        Currencies2.add("MYR");
-        Currencies2.add("NOK");
-        Currencies2.add("NZD");
-        Currencies2.add("PHP");
-        Currencies2.add("PLN");
-        Currencies2.add("RON");
-        Currencies2.add("RUB");
-        Currencies2.add("SEK");
-        Currencies2.add("SGD");
-        Currencies2.add("THB");
-        Currencies2.add("TRY");
-        Currencies2.add("USD");
-        Currencies2.add("ZAR");
+        currenciesRList.add("AUD");
+        currenciesRList.add("BGN");
+        currenciesRList.add("BRL");
+        currenciesRList.add("CAD");
+        currenciesRList.add("CHF");
+        currenciesRList.add("CNY");
+        currenciesRList.add("CZK");
+        currenciesRList.add("DKK");
+        currenciesRList.add("EUR");
+        currenciesRList.add("GBP");
+        currenciesRList.add("HKD");
+        currenciesRList.add("HRK");
+        currenciesRList.add("HUF");
+        currenciesRList.add("IDR");
+        currenciesRList.add("ILS");
+        currenciesRList.add("INR");
+        currenciesRList.add("JPY");
+        currenciesRList.add("KRW");
+        currenciesRList.add("MXN");
+        currenciesRList.add("MYR");
+        currenciesRList.add("NOK");
+        currenciesRList.add("NZD");
+        currenciesRList.add("PHP");
+        currenciesRList.add("PLN");
+        currenciesRList.add("RON");
+        currenciesRList.add("RUB");
+        currenciesRList.add("SEK");
+        currenciesRList.add("SGD");
+        currenciesRList.add("THB");
+        currenciesRList.add("TRY");
+        currenciesRList.add("USD");
+        currenciesRList.add("ZAR");
 
 
-        ArrayAdapter<String> arrayDing2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Currencies2);
+        ArrayAdapter<String> arrayDing2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, currenciesRList);
 
-        Currencies3.setAdapter(arrayDing2);
-        Currencies3.setVisibility(View.VISIBLE);
-        Currencies3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        CurrenciesR.setAdapter(arrayDing2);
+        CurrenciesR.setVisibility(View.VISIBLE);
+        CurrenciesR.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                activeCurrency = Currencies2.get(position);
+                activeCurrency = currenciesRList.get(position);
                 toCurrency = (TextView)findViewById(R.id.toCurrency);
                 toCurrency.setText(activeCurrency);
                 toCurrency.setVisibility(View.VISIBLE);
                 TextView text2 = (TextView) findViewById(R.id.tocurrency);
                 text2.setText(activeCurrency);
-                Currencies3.setVisibility(View.INVISIBLE);
-                listViewTrue = false;
+                CurrenciesR.setVisibility(View.INVISIBLE);
+                listViewTrueR = false;
 
 
             }
