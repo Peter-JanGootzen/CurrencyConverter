@@ -1,5 +1,5 @@
 # CurrencyConverter
-CurrencyCoverter is a simple and lightweight app that uses minimal data bandwith to convert currencies.
+CurrencyConverter is a simple and lightweight app that uses minimal data bandwith to convert currencies.
 
 We will put this project on the Play Store when it is finalized. We do not have an ETA for when we are going to continue working on the app.
 We have also not decided yet whether or not we are gonna put ads in the Play Store version. They will not be intrusive, that is for sure!
