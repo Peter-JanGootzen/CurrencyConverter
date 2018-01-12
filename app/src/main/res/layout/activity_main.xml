@@ -23,9 +23,9 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editTextEuro"
+        android:id="@+id/editTextLeft"
         android:width="100dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -34,11 +34,11 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/editTextDollar"
+        android:id="@+id/editTextRight"
         android:width="100dp"
-        android:layout_alignBottom="@+id/editTextEuro"
+        android:layout_alignBottom="@+id/editTextLeft"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         />
@@ -55,62 +55,35 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/currencyL"
-        android:layout_alignRight="@+id/editTextEuro"
-        android:layout_alignEnd="@+id/editTextEuro"
+        android:id="@+id/currencyListLeft"
+        android:layout_alignRight="@+id/editTextLeft"
+        android:layout_alignEnd="@+id/editTextLeft"
         android:layout_alignParentTop="true"
-        android:clickable="false"
-        android:cursorVisible="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
         android:layout_alignBottom="@+id/calculate"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/currencyR"
+        android:id="@+id/currencyListRight"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/editTextDollar"
-        android:layout_alignStart="@+id/editTextDollar"
-        android:visibility="visible"
+        android:layout_alignLeft="@+id/editTextRight"
+        android:layout_alignStart="@+id/editTextRight"
+        android:visibility="invisible"
         android:layout_alignBottom="@+id/calculate" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/currencyL"
-        android:layout_alignBottom="@+id/editTextEuro"
-        android:gravity="top|bottom|center_horizontal"
-        android:id="@+id/vancurrency"
-        android:layout_toStartOf="@+id/calculate"
-        android:layout_toLeftOf="@+id/calculate"
-        android:visibility="invisible"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tocurrency"
-        android:layout_below="@+id/currencyL"
-        android:layout_alignBottom="@+id/editTextDollar"
-        android:gravity="top|bottom|center_horizontal"
-        android:layout_toRightOf="@+id/currencySwitch"
-        android:visibility="invisible"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/vanCurrency"
-        android:onClick="viewer2"
+        android:id="@+id/currencyLeft"
+        android:onClick="openCurrencyListLeft"
         android:layout_alignTop="@+id/currencySwitch"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignBottom="@+id/currencySwitch"
-        android:layout_alignRight="@+id/currencyL"
-        android:layout_alignEnd="@+id/currencyL"
+        android:layout_alignRight="@+id/currencyListLeft"
+        android:layout_alignEnd="@+id/currencyListLeft"
         android:gravity="center_vertical|center_horizontal"
         android:text="EUR" />
 
@@ -118,14 +91,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/toCurrency"
-        android:onClick="viewer"
-        android:layout_alignBottom="@+id/vanCurrency"
+        android:id="@+id/currencyRight"
+        android:onClick="openCurrencyListRight"
+        android:layout_alignBottom="@+id/currencyLeft"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/vanCurrency"
-        android:layout_alignLeft="@+id/currencyR"
-        android:layout_alignStart="@+id/currencyR"
+        android:layout_alignTop="@+id/currencyLeft"
+        android:layout_alignLeft="@+id/currencyListRight"
+        android:layout_alignStart="@+id/currencyListRight"
         android:gravity="center_vertical|center_horizontal"
         android:text="USD" />
 
