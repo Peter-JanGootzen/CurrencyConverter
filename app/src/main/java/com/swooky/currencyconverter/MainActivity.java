@@ -281,10 +281,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         backpress++;
-        if (backpress > 0)
-            Toast.makeText(this, "Press Back again to Exit.", Toast.LENGTH_SHORT).show();
-        else if (backpress > 1)
+        if (backpress > 1)
             this.finish();
+        else if (backpress > 0)
+            Toast.makeText(this, "Press Back again to Exit.", Toast.LENGTH_SHORT).show();
         Handler mHandler = new Handler();
         mHandler.postDelayed(new Runnable() {
             public void run() {
