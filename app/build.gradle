@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "com.swooky.currencyconverter"
+        applicationId "com.peterjangootzen.currencyconverter"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1

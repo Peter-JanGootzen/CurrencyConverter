@@ -1,4 +1,4 @@
-package com.swooky.currencyconverter;
+package com.peterjangootzen.currencyconverter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
